@@ -366,10 +366,19 @@ a {
 }
 
 .about__headline {
+    font-size: 30px;
+    color: #666d89;
+
+    margin: 0;
     margin-bottom: 22px;
 }
 
 .about__text {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+
+    margin: 0;
     margin-bottom: 45px;
 }
 
