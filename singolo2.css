@@ -63,35 +63,31 @@ a {
     padding: 0 40px;
 }
 
-.section-headline {
-    font-size: 30px;
-    color: #666d89;
-
-    margin: 0;
-}
-
-.section-text {
-    font-size: 18px;
-    line-height: 30px;
-    color: #767e9e;
-
-    margin: 0;
-}
 
 .portfolio {
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
-    min-height: 732px;
 
-    padding-top: 65px;
-    padding-bottom: 67px;
+    padding-top: 64px;
+    padding-bottom: 68px;
 }
 
 .portfolio__headline {
-    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #666d89;
+
+    margin: 0;
+    margin-bottom: 21px;
 }
 
 .portfolio__text {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+    text-align: justify;
+
+    margin: 0;
     margin-bottom: 5px;
 }
 
@@ -101,9 +97,6 @@ a {
     list-style: none;
 
     display: flex;
-    justify-content: flex-start;
-
-    min-width: 300px;
 }
 
 .portfolio__button {
@@ -116,7 +109,7 @@ a {
     border-radius: 5px;
     
     min-height: 22px;
-    margin-bottom: 19px;
+    margin-bottom: 18px;
     margin-right: 10px;
 }
 
@@ -147,17 +140,27 @@ a {
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
 
-    min-width: 599px;
     padding-top: 62px;
     padding-bottom: 67px;
 }
 
 .about__headline {
-    margin-bottom: 22px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #666d89;
+
+    margin: 0;
+    margin-bottom: 21px;
 }
 
 .about__text {
-    margin-bottom: 45px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+    text-align: justify;
+
+    margin: 0;
+    margin-bottom: 46px;
 }
 
 .about__person-list {
@@ -179,16 +182,22 @@ a {
 }
 
 .person__name {
-    margin: 0;
     font-size: 18px;
     line-height: 18px;
     color: #666d89;
+
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .person__text {
     font-size: 12px;
-    line-height: 19.5px;
+    line-height: 21.56px;
     color: #767e9e;
+    text-align: justify;
+
+    margin: 0;
+    margin-bottom: 24px;
 }
 
 .person__social-icons-list {
@@ -201,8 +210,6 @@ a {
     flex-wrap: wrap;
 
     width: 160px;
-    margin-top: 27px;
-    padding-left: 1px;
 }
 
 .person__item {
