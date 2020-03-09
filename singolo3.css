@@ -68,23 +68,24 @@ a {
     border-bottom: 6px solid #ea676b;
     color: #f0d8d9;
     
-    padding-top: 63px;
-    padding-bottom: 67px;
+    padding-top: 62px;
+    padding-bottom: 68px;
 }
 
 .contacts__headline {
     font-size: 30px;
-    margin: 0;
+    line-height: 30px;
 
+    margin: 0;
     margin-bottom: 22px;
 }
 
 .contacts__text {
     font-size: 18px;
     line-height: 30px;
-    margin: 0;
-
     text-align: justify;
+
+    margin: 0;
     margin-bottom: 44px;
 }
 
@@ -101,7 +102,7 @@ a {
 .contact-form__item {
     cursor: text;
     font-size: 12px;
-    line-height: 21.56px;
+    line-height: 22px;
     background-color: #d6564f;
     border: 0;
     border-radius: 5px;
@@ -132,11 +133,12 @@ a {
 .contact-form__button {
     cursor: pointer;
     font-size: 12px;
-    line-height: 21.56px;
+    line-height: 22px;
     color: #f48c8f;
     background-color: #d6564f;
     border: 0;
     border-radius: 5px;
+    padding: 0;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -144,18 +146,19 @@ a {
 .contact-information-block__headline {
     font-size: 18px;
     line-height: 18px;
-    margin: 0;
 
+    margin: 0;
     margin-bottom: 11px;
 }
 
 .contact-information-block__text {
     font-size: 12px;
-    line-height: 21.56px;
+    line-height: 22px;
     text-align: justify;
-    margin: 0;
+    word-wrap: break-word;
 
-    margin-bottom: 22px;
+    margin: 0;
+    margin-bottom: 21px;
 }
 
 .contact-information-block__contact-list {
