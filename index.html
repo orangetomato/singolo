@@ -15,7 +15,7 @@
                 <nav class="page-header__navigation-menu">
                     <ul class="navigation-menu__list">
                         <li class="navigation-menu__item">
-                            <a class="navigation-menu__link navigation-menu__link--colored" href="#home">Home</a>
+                            <a class="navigation-menu__link navigation-menu__link--current" href="#home">Home</a>
                         </li>
                         <li class="navigation-menu__item">
                             <a class="navigation-menu__link" href="#services">Services</a>
@@ -39,10 +39,21 @@
         <div class="container">
             <div class="slider__wrapper">
                 <h2 class="visually-hidden">Image Gallery</h2>
-                <button class="slider__arrow" type="button" aria-label="previous"></button>
+                <button class="slider__arrow slider__arrow--previous" type="button" aria-label="previous"></button>
                 <div class="slider__pictures">
-                    <img class="slider__iphone-vertical" width="240" height="483" src="assets/img/iphone-vertical.png" alt="Vertical Iphone">
-                    <img class="slider__iphone-horizontal" width="484" height="240" src="assets/img/iphone-horizontal.png" alt="Horizontal Iphone">
+                    <div class="pictures__slide pictures__slide--1">
+                        <div class="pictures__iphone pictures__iphone--vertical">
+                            <div class="iphone__screen iphone__screen--vertical"></div>
+                            <div class="iphone__phone iphone__phone--vertical"></div>
+                            <div class="iphone__shadow iphone__shadow--vertical"></div>
+                        </div>
+                        <div class="pictures__iphone pictures__iphone--horizontal">
+                            <div class="iphone__screen iphone__screen--horizontal"></div>
+                            <div class="iphone__phone iphone__phone--horizontal"></div>
+                            <div class="iphone__shadow iphone__shadow--horizontal"></div>
+                        </div>
+                    </div>
+                    <div class="pictures__slide pictures__slide--2 hidden"></div>
                 </div>
                 <button class="slider__arrow slider__arrow--next" type="button" aria-label="next"></button>
             </div>
@@ -58,42 +69,42 @@
             </p>
             <ul class="services__service-list">
                 <li class="service-list__item">
-                    <img class="service-list__image" width="59" height="60" src="assets/img/icon-custom-design.svg" alt="Custom Design">
+                    <img class="service-list__image" width="59" height="60" src="assets/img/services/icon-custom-design.svg" alt="Custom Design">
                     <div class="service-list__text-block">
                         <h3 class="service-list__headline">Custom Design</h3>
                         <p class="service-list__text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
                     </div>
                 </li>
                 <li class="service-list__item">
-                    <img class="service-list__image" width="59" height="60" src="assets/img/icon-inovative-ideas.svg" alt="Inovative Ideas">
+                    <img class="service-list__image" width="59" height="60" src="assets/img/services/icon-inovative-ideas.svg" alt="Inovative Ideas">
                     <div class="service-list__text-block">
                         <h3 class="service-list__headline">Inovative Ideas</h3>
                         <p class="service-list__text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                     </div>
                 </li>
                 <li class="service-list__item">
-                    <img class="service-list__image" width="59" height="60" src="assets/img/icon-love-is-the-answer.svg" alt="Love Is The Answer">
+                    <img class="service-list__image" width="59" height="60" src="assets/img/services/icon-love-is-the-answer.svg" alt="Love Is The Answer">
                     <div class="service-list__text-block">
                         <h3 class="service-list__headline">Love Is The Answer</h3>
                         <p class="service-list__text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
                     </div>
                 </li>
                 <li class="service-list__item">
-                    <img class="service-list__image" width="59" height="60" src="assets/img/icon-responsive-layout.svg" alt="Responsive Layout">
+                    <img class="service-list__image" width="59" height="60" src="assets/img/services/icon-responsive-layout.svg" alt="Responsive Layout">
                     <div class="service-list__text-block">
                         <h3 class="service-list__headline">Responsive Layout</h3>
                         <p class="service-list__text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
                     </div>
                 </li>
                 <li class="service-list__item">
-                    <img class="service-list__image" width="59" height="60" src="assets/img/icon-24-7-support.svg" alt="24 / 7 Support">
+                    <img class="service-list__image" width="59" height="60" src="assets/img/services/icon-24-7-support.svg" alt="24 / 7 Support">
                     <div class="service-list__text-block">
                         <h3 class="service-list__headline">24 / 7 Support</h3>
                         <p class="service-list__text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
                     </div>
                 </li>
                 <li class="service-list__item">
-                    <img class="service-list__image" width="59" height="60" src="assets/img/icon-feel-like-a-star.svg" alt="Feel Like A Star">
+                    <img class="service-list__image" width="59" height="60" src="assets/img/services/icon-feel-like-a-star.svg" alt="Feel Like A Star">
                     <div class="service-list__text-block">
                         <h3 class="service-list__headline">Feel Like A Star</h3>
                         <p class="service-list__text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
@@ -136,7 +147,7 @@
             <p class="about__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <ul class="about__person-list">
                 <li class="about__person">
-                    <img class="person__photo" src="assets/img/persons/adam-jensen.jpg" alt="Adam Jensen photo" width="300px" height="300px">
+                    <img class="person__photo" src="assets/img/about/adam-jensen.jpg" alt="Adam Jensen photo" width="300px" height="300px">
                     <h3 class="person__name">Adam Jensen</h3>
                     <p class="person__text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                     <ul class="person__social-icons-list">
@@ -147,7 +158,7 @@
                     </ul>
                 </li>
                 <li class="about__person">
-                    <img class="person__photo" src="assets/img/persons/desmond-miles.jpg" alt="Desmond Miles photo" width="300px" height="300px">
+                    <img class="person__photo" src="assets/img/about/desmond-miles.jpg" alt="Desmond Miles photo" width="300px" height="300px">
                     <h3 class="person__name">Desmond Miles</h3>
                     <p class="person__text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
                     <ul class="person__social-icons-list">
@@ -158,7 +169,7 @@
                     </ul>
                 </li>
                 <li class="about__person">
-                    <img class="person__photo" src="assets/img/persons/scolara-visari.jpg" alt="Scolara Visari photo" width="300px" height="300px">
+                    <img class="person__photo" src="assets/img/about/scolara-visari.jpg" alt="Scolara Visari photo" width="300px" height="300px">
                     <h3 class="person__name">Scolara Visari</h3>
                     <p class="person__text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
                     <ul class="person__social-icons-list">
@@ -182,7 +193,7 @@
                     <input class="contact-form__item contact-form__item--email" type="email" name="user-email" id="user-email" placeholder="Email (Required)" required>
                     <input class="contact-form__item contact-form__item--subject" type="text" name="subject" id="subject" placeholder="Subject">
                     <textarea class="contact-form__item contact-form__item--textarea" name="details" id="details" placeholder="Describe your project in detail..."></textarea>
-                    <button class="contact-form__button" type="submit" formmethod="POST">Submit</button>
+                    <button class="contact-form__button" type="submit" formmethod="POST">Send</button>
                 </form>
                 <div class="contacts__contact-information-block">
                     <h3 class="contact-information-block__headline">Contact Information</h3>
@@ -211,5 +222,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
