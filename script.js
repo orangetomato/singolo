@@ -4,7 +4,7 @@
     const navigation = document.querySelector('.page-header__navigation-menu');
     const linkList = navigation.querySelectorAll('.navigation-menu__link');
 
-    function changeColor(evt) {
+    function changeColorByClick(evt) {
         if (evt.target.classList.contains('navigation-menu__link')) {
             for (let link of linkList) {
                 if (link.classList.contains('navigation-menu__link--current')) {
@@ -15,19 +15,14 @@
             evt.target.classList.add('navigation-menu__link--current');
         }
     }
+    navigation.addEventListener('click', changeColorByClick);
 
-    navigation.addEventListener('click', changeColor);
-
-
-    document.addEventListener('scroll', changeActiveLink);
-    window.onload = changeActiveLink();
-
-    function changeActiveLink() {
+    function changeColorByScroll() {
         const currentPositionY = window.scrollY;
         const tagsWithId = document.querySelectorAll('[id]');
 
         tagsWithId.forEach(tag => {
-            if (tag.offsetTop - 95 <= currentPositionY && tag.offsetTop + tag.offsetHeight - 95 > currentPositionY) {
+            if (tag.offsetTop - 96 <= currentPositionY && tag.offsetTop + tag.offsetHeight - 96 > currentPositionY) {
                 linkList.forEach(link => {
                     link.classList.remove('navigation-menu__link--current');
                     if (tag.getAttribute('id') === link.getAttribute('href').substring(1)) {
@@ -37,53 +32,61 @@
             }
         });
     }
+    document.addEventListener('scroll', changeColorByScroll);
 })();
 
 (function() {
-    const previousSlideArrow = document.querySelector('.slider__arrow--previous');
-    const nextSlideArrow = document.querySelector('.slider__arrow--next');
-    const slideList = document.querySelectorAll('.pictures__slide');
     const slider = document.querySelector('.slider');
-    let currentSlideIndex = 0;
+    const items = document.querySelectorAll('.pictures__slide');
+    let currentItem = 0;
+    let isEnabled = true;
 
-    function showPreviousSlide() {
-        slideList[currentSlideIndex].classList.add('hidden');
-        let previousSlideIndex = currentSlideIndex - 1;
-
-        if (previousSlideIndex < 0) {
-            previousSlideIndex = slideList.length - 1;
-        }
-
-        if (previousSlideIndex === 1) {
-            slider.classList.add('slider--blue');
-        } else {
-            slider.classList.remove('slider--blue');
-        }
-
-        slideList[previousSlideIndex].classList.remove('hidden');
-        currentSlideIndex = previousSlideIndex;
+    function changeCurrentItem(n) {
+        currentItem = (n + items.length) % items.length;
     }
 
-    function showNextSlide() {
-        slideList[currentSlideIndex].classList.add('hidden');
-        let nextSlideIndex = currentSlideIndex + 1;
-
-        if (nextSlideIndex > slideList.length - 1) {
-            nextSlideIndex = 0;
-        }
-
-        if (nextSlideIndex === 1) {
-            slider.classList.add('slider--blue');
-        } else {
-            slider.classList.remove('slider--blue');
-        }
-
-        slideList[nextSlideIndex].classList.remove('hidden');
-        currentSlideIndex = nextSlideIndex;
+    function hideItem(direction) {
+        isEnabled = false;
+        items[currentItem].classList.add(direction);
+        items[currentItem].addEventListener('animationend', function() {
+            this.classList.remove('active', direction);
+        });
     }
 
-    previousSlideArrow.addEventListener('click', showPreviousSlide);
-    nextSlideArrow.addEventListener('click', showNextSlide);
+    function showItem(direction) {
+        items[currentItem].classList.add('next', direction);
+        items[currentItem].addEventListener('animationend', function() {
+            this.classList.remove('next', direction);
+            this.classList.add('active');
+            isEnabled = true;
+        });
+    }
+
+    function nextItem(n) {
+        hideItem('to-left');
+        changeCurrentItem(n + 1);
+        showItem('from-right');
+    }
+
+    function previousItem(n) {
+        hideItem('to-right');
+        changeCurrentItem(n - 1);
+        showItem('from-left');
+    }
+
+    document.querySelector('.slider__arrow--previous').addEventListener('click', function() {
+        if (isEnabled) {
+            previousItem(currentItem);
+            slider.classList.toggle('slider--blue');
+        }
+    });
+
+    document.querySelector('.slider__arrow--next').addEventListener('click', function() {
+        if (isEnabled) {
+            nextItem(currentItem);
+            slider.classList.toggle('slider--blue');
+        }
+    });
 })();
 
 (function() {
@@ -118,7 +121,7 @@
         evt.target.classList.add('portfolio__button--active');
     }
 
-    buttons.forEach(button => button.addEventListener('click', () => changePictures(event)));
+    buttons.forEach(button => button.addEventListener('click', changePictures));
 })();
 
 (function() {
@@ -140,7 +143,7 @@
         isSwitched = true;
     }
 
-    portfolioPictures.forEach(image => image.addEventListener('click', () => showBorder(event)));
+    portfolioPictures.forEach(image => image.addEventListener('click', showBorder));
 })();
 
 (function() {
@@ -158,7 +161,7 @@
 
     function showModal() {
         modal.classList.remove('hidden');
-        addContent(event);
+        addContent();
     }
 
     function hideModal() {
@@ -180,6 +183,6 @@
         }
     }
 
-    sendFormButton.addEventListener('click', () => validate(event));
+    sendFormButton.addEventListener('click', validate);
     closeModalButton.addEventListener('click', hideModal);
 })();
