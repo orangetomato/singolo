@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <header class="page-header" id="home">
+    <header class="page-header">
         <div class="container">
             <div class="page-header__wrapper">
                 <h1 class="page-header__headline">Singolo<sup class="headline__sign">*</sup></h1>
@@ -35,7 +35,7 @@
         </div>
     </header>
     
-    <section class="slider">
+    <section class="slider" id="home">
         <div class="container">
             <div class="slider__wrapper">
                 <h2 class="visually-hidden">Image Gallery</h2>
@@ -193,7 +193,7 @@
                     <input class="contact-form__item contact-form__item--email" type="email" name="user-email" id="user-email" placeholder="Email (Required)" required>
                     <input class="contact-form__item contact-form__item--subject" type="text" name="subject" id="subject" placeholder="Subject">
                     <textarea class="contact-form__item contact-form__item--textarea" name="details" id="details" placeholder="Describe your project in detail..."></textarea>
-                    <button class="contact-form__button" type="submit" formmethod="POST">Send</button>
+                    <button class="contact-form__button form-button" type="submit" formmethod="POST">Send</button>
                 </form>
                 <div class="contacts__contact-information-block">
                     <h3 class="contact-information-block__headline">Contact Information</h3>
@@ -221,6 +221,13 @@
             </div>
         </div>
     </footer>
+
+    <section class="modal hidden">
+        <p class="modal__result">Message was sent</p>
+        <p class="modal__subject"></p>
+        <p class="modal__description"></p>
+        <button class="modal__close-button form-button" type="button">OK</button>
+    </section>
 
     <script src="script.js"></script>
 </body>
