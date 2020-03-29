@@ -101,7 +101,7 @@ a {
     padding-bottom: 25px;
 
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 10;
 }
 
@@ -786,4 +786,88 @@ a {
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    .services__service-list {
+        width: 100%;
+        height: 100%;
+    }
+
+    .portfolio__picture-list {
+        height: 100%;
+    }
+
+    .about__person-list {
+        width: 100%;
+    }
+
+    .contacts__contact-form {
+        width: 67%;
+    }
+
+    .contact-form__item {
+        width: calc(100% - 29px);
+    }
+
+    .contacts__contact-information-block {
+        width: 33%;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .portfolio__item {
+        flex: 1 0 35%;
+    }
+
+    .about__person-list {
+        flex-wrap: wrap;
+    }
+
+    .about__person:not(:last-child) {
+        margin-bottom: 34px;
+    }
+
+    .contacts__wrapper {
+        display: block;
+        height: 100%;
+    }
+
+    .contacts__contact-form {
+        width: 100%;
+    }
+
+    .contact-form__item {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .contact-form__button {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .contacts__contact-information-block {
+        width: 100%;
+    }
+
+    .page-footer__wrapper {
+        justify-content: center;
+    }
+
+    .page-footer__copyright {
+        display: none;
+    }
 }
